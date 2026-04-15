@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdelrahman Fawzy | Professional Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>Abdelrahman Fawzy | Portfolio Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --gold: #D4AF37;
-            --dark-gold: #996515;
-            --bg-dark: #080808;
-            --glass: rgba(255, 255, 255, 0.05);
-            --border: rgba(212, 175, 55, 0.3);
+            --gold-glow: rgba(212, 175, 55, 0.4);
+            --bg-dark: #050505;
+            --card-bg: rgba(20, 20, 20, 0.7);
+            --glass-border: rgba(212, 175, 55, 0.2);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
@@ -20,20 +20,20 @@
 
         /* Navbar */
         header {
-            background: rgba(8, 8, 8, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 20px 8%;
+            background: rgba(5, 5, 5, 0.9);
+            backdrop-filter: blur(15px);
+            padding: 15px 8%;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--glass-border);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .logo { color: var(--gold); font-size: 1.6rem; font-weight: 900; letter-spacing: 1px; }
-        nav a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .logo { color: var(--gold); font-size: 1.5rem; font-weight: 900; letter-spacing: 1px; }
+        nav a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
         nav a:hover { color: var(--gold); }
 
         /* Hero Section - الصورة الأولى */
@@ -44,90 +44,101 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://files.catbox.moe/n4mjhu.png');
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://files.catbox.moe/n4mjhu.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
-        .hero h1 { font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; text-shadow: 0 10px 20px rgba(0,0,0,0.5); }
-        .hero h1 span { color: var(--gold); }
-        .hero p { font-size: 1.2rem; color: #ddd; max-width: 700px; margin: 20px 0 30px; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; line-height: 1.1; }
+        .hero h1 span { color: var(--gold); text-shadow: 0 0 20px var(--gold-glow); }
+        .hero p { font-size: 1.2rem; color: #ccc; max-width: 750px; margin: 20px 0 40px; }
 
-        /* General Section Styling */
+        /* Buttons */
+        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        .btn-main {
+            padding: 12px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.4s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn-gold { background: var(--gold); color: #000; }
+        .btn-gold:hover { transform: scale(1.05); box-shadow: 0 0 25px var(--gold-glow); }
+        .btn-whatsapp { background: #25D366; color: #fff; }
+        .btn-whatsapp:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(37, 211, 102, 0.4); }
+
+        /* Sections */
         section { padding: 100px 8%; position: relative; }
-        h2 { font-size: 2.5rem; text-align: center; margin-bottom: 60px; color: var(--gold); font-weight: 900; }
-        
-        /* Grid Layout */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        h2 { font-size: 2.5rem; text-align: center; margin-bottom: 50px; font-weight: 900; text-transform: uppercase; }
+        h2 span { color: var(--gold); }
 
-        /* Project Cards */
-        .card {
-            background: var(--glass);
-            border: 1px solid var(--border);
+        /* Info Cards (About & Experience) */
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .info-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 25px;
+            border: 1px solid var(--glass-border);
+        }
+        .info-card h3 { color: var(--gold); margin-bottom: 20px; font-size: 1.5rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px; }
+        .info-card ul { list-style: none; }
+        .info-card li { margin-bottom: 15px; color: #bbb; display: flex; gap: 10px; align-items: flex-start; }
+        .info-card li i { color: var(--gold); margin-top: 5px; }
+
+        /* Projects Grid */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
             padding: 30px;
             border-radius: 20px;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-align: center;
-            backdrop-filter: blur(5px);
+            transition: 0.4s;
         }
-        .card:hover { transform: translateY(-15px); border-color: var(--gold); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.1); }
-        .card i { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
-        .card h3 { font-size: 1.5rem; margin-bottom: 10px; }
-        .card p { color: #bbb; font-size: 0.9rem; margin-bottom: 20px; }
-        
-        .btn-card {
-            padding: 8px 25px;
-            border: 1px solid var(--gold);
+        .project-card:hover { transform: translateY(-10px); background: rgba(212, 175, 55, 0.05); border-color: var(--gold); }
+        .project-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
+        .project-link {
+            margin-top: 20px;
+            display: inline-block;
             color: var(--gold);
             text-decoration: none;
-            border-radius: 50px;
             font-weight: bold;
-            transition: 0.3s;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--gold);
         }
-        .btn-card:hover { background: var(--gold); color: #000; }
 
-        /* Certificates Section - الصورة الثانية */
-        .certificates-sec {
+        /* Certificates - الصورة الثانية */
+        .certs-section {
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://files.catbox.moe/jxpc8u.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
-
-        .cert-item {
-            background: rgba(20, 20, 20, 0.6);
-            border-right: 4px solid var(--gold);
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 0 10px 10px 0;
+        .cert-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(255,255,255,0.05);
+            margin-bottom: 15px;
+            padding: 20px 30px;
+            border-radius: 15px;
+            border-right: 5px solid var(--gold);
+            transition: 0.3s;
         }
-        .cert-info h4 { color: var(--gold); font-size: 1.2rem; }
-        .cert-info p { color: #999; font-size: 0.85rem; }
-        .cert-date { font-weight: bold; color: #fff; background: var(--dark-gold); padding: 5px 12px; border-radius: 5px; font-size: 0.8rem; }
-
-        /* Skills Tags */
-        .skills-container { text-align: center; margin-top: 20px; }
-        .tag {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--gold);
-            padding: 10px 25px;
-            margin: 8px;
-            border-radius: 50px;
-            border: 1px solid var(--border);
-            font-weight: bold;
-        }
+        .cert-row:hover { background: rgba(212, 175, 55, 0.1); transform: translateX(-10px); }
+        .cert-date { background: var(--gold); color: #000; padding: 4px 12px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; }
 
         /* Footer */
-        footer { padding: 60px 8%; background: #000; text-align: center; border-top: 1px solid var(--border); }
-        .social-links a { color: var(--gold); font-size: 2rem; margin: 0 15px; transition: 0.3s; }
-        .social-links a:hover { transform: scale(1.2); color: #fff; }
+        footer { padding: 60px 8%; background: #000; text-align: center; border-top: 1px solid var(--glass-border); }
+        .social-icons a { color: #fff; font-size: 1.8rem; margin: 0 15px; transition: 0.3s; }
+        .social-icons a:hover { color: var(--gold); transform: translateY(-5px); }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
+            .hero h1 { font-size: 2.8rem; }
+            header { padding: 15px 5%; }
             nav { display: none; }
         }
     </style>
@@ -137,131 +148,162 @@
     <header>
         <div class="logo">BODA FAWZY</div>
         <nav>
+            <a href="#about">الخبرات</a>
             <a href="#projects">المشاريع</a>
             <a href="#certificates">الشهادات</a>
-            <a href="#skills">المهارات</a>
-            <a href="#contact">تواصل معي</a>
+            <a href="#contact">تواصل</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>ABD ELRAHMAN <span>FAWZY</span></h1>
-        <p>متخصص نظم معلومات (MIS) | مدير مخازن | محلل مالي ومطور ويب</p>
-        <a href="#projects" class="btn-card" style="padding: 15px 40px; font-size: 1.1rem;">استعراض الأعمال</a>
+        <h1>عبد الرحمن <span>فوزي</span></h1>
+        <p>مطور نظم معلومات (MIS) | مدير عمليات لوجستية | محلل أسواق مالية. أجمع بين الرؤية البرمجية والخبرة الإدارية.</p>
+        <div class="btn-group">
+            <a href="#projects" class="btn-main btn-gold">استعراض المشاريع</a>
+            <a href="https://wa.me/201285577074" class="btn-main btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+            </a>
+        </div>
     </section>
 
-    <section id="projects">
-        <h2>مشاريعي <span>الرقمية</span></h2>
-        <div class="grid">
-            <div class="card">
-                <i class="fas fa-chart-line"></i>
-                <h3>BODA GREEN RED</h3>
-                <p>مؤشر تداول متقدم لمنصة TradingView للتحليل الفني.</p>
-                <a href="https://sfman25.github.io/btc-/" class="btn-card" target="_blank">معاينة</a>
+    <section id="about">
+        <h2>المسار <span>المهني</span></h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3><i class="fas fa-graduation-cap"></i> التعليم</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>نظم إدارة المعلومات (MIS)</strong>
+                            <p>المعهد العالي للسياحة والفنادق والحاسب الآلي - الإسكندرية (2022 - 2026)</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="card">
-                <i class="fas fa-shopping-bag"></i>
-                <h3>Nesma Art Bags</h3>
-                <p>متجر إلكتروني لعرض وبيع الحقائب اليدوية الفاخرة.</p>
-                <a href="https://sfman25.github.io/Hand-mide/" class="btn-card" target="_blank">معاينة</a>
-            </div>
-            <div class="card">
-                <i class="fas fa-id-card"></i>
-                <h3>CV BODA</h3>
-                <p>تصميم سيرة ذاتية تفاعلية بأسلوب عصري.</p>
-                <a href="https://sfman25.github.io/CV-BODA/" class="btn-card" target="_blank">معاينة</a>
-            </div>
-            <div class="card">
-                <i class="fas fa-warehouse"></i>
-                <h3>نظام إدارة المخازن</h3>
-                <p>تطبيق Python وSQLite لإدارة المخزون والعملاء بكفاءة.</p>
-                <span class="btn-card" style="opacity: 0.6;">مشروع محلي</span>
-            </div>
-            <div class="card">
-                <i class="fas fa-calendar-alt"></i>
-                <h3>منصة المناسبات</h3>
-                <p>مشروع تخرج متكامل لإدارة وحجز الفعاليات.</p>
-                <a href="https://sfman25.github.io/Graduation-project/" class="btn-card" target="_blank">معاينة</a>
-            </div>
-            <div class="card">
-                <i class="fas fa-coffee"></i>
-                <h3>كافيه مزاج</h3>
-                <p>واجهة مستخدم احترافية لخدمات المطاعم والكافيهات.</p>
-                <a href="https://sfman25.github.io/Cafe-mazje/" class="btn-card" target="_blank">معاينة</a>
+            <div class="info-card">
+                <h3><i class="fas fa-briefcase"></i> الخبرة العملية</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>مدير مخازن (Warehouse Manager)</strong>
+                            <p>شركة كمال سعد للورق | 2014 - حتى الآن</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>محلل مالي ومطور Pine Script</strong>
+                            <p>تطوير استراتيجيات تداول آلية ومؤشرات تقنية احترافية.</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section id="certificates" class="certificates-sec">
+    <section id="projects" style="background: rgba(255,255,255,0.02);">
+        <h2>مشاريع <span>مختارة</span></h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>BODA GREEN RED</h3>
+                <p>مؤشر تداول ذكي للعملات الرقمية والذهب على منصة TradingView.</p>
+                <a href="https://sfman25.github.io/btc-/" class="project-link" target="_blank">فتح المشروع</a>
+            </div>
+            <div class="project-card">
+                <i class="fas fa-shopping-bag"></i>
+                <h3>Nesma Art Bags</h3>
+                <p>منصة تجارة إلكترونية متخصصة في الحقائب اليدوية الفاخرة.</p>
+                <a href="https://sfman25.github.io/Hand-mide/" class="project-link" target="_blank">فتح المشروع</a>
+            </div>
+            <div class="project-card">
+                <i class="fas fa-warehouse"></i>
+                <h3>Inventory System</h3>
+                <p>نظام متكامل لإدارة المخزون والعملاء باستخدام Python و SQLite.</p>
+                <span class="project-link" style="border:none; color:#555;">Desktop App</span>
+            </div>
+            <div class="project-card">
+                <i class="fas fa-user-circle"></i>
+                <h3>CV BODA PRO</h3>
+                <p>بناء هويتي البصرية الرقمية باستخدام أحدث تقنيات الويب.</p>
+                <a href="https://sfman25.github.io/CV-BODA/" class="project-link" target="_blank">فتح المشروع</a>
+            </div>
+            <div class="project-card">
+                <i class="fas fa-calendar-check"></i>
+                <h3>Graduation Project</h3>
+                <p>منصة رقمية متطورة لتنظيم وإدارة الفعاليات والمناسبات.</p>
+                <a href="https://sfman25.github.io/Graduation-project/" class="project-link" target="_blank">فتح المشروع</a>
+            </div>
+            <div class="project-card">
+                <i class="fas fa-mug-hot"></i>
+                <h3>Café Mazaje</h3>
+                <p>تصميم واجهة مستخدم عصرية لخدمات الضيافة والمطاعم.</p>
+                <a href="https://sfman25.github.io/Cafe-mazje/" class="project-link" target="_blank">فتح المشروع</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="certs-section">
         <h2>الشهادات <span>والاعتمادات</span></h2>
         <div style="max-width: 900px; margin: 0 auto;">
             
-            <div class="cert-item">
-                <div class="cert-info">
+            <div class="cert-row">
+                <div>
                     <h4>أدوات التخطيط المالي وإدارة المخاطر</h4>
-                    <p>أكاديمية نولكس بالتعاون مع مكتبة مصر العامة</p>
+                    <p style="color: #999; font-size: 0.85rem;">أكاديمية نولكس بالتعاون مع مكتبة مصر العامة</p>
                 </div>
                 <div class="cert-date">2025</div>
             </div>
 
-            <div class="cert-item">
-                <div class="cert-info">
-                    <h4>How to be HR (Round 72)</h4>
-                    <p>أساسيات الموارد البشرية والإدارة الاحترافية</p>
+            <div class="cert-row">
+                <div>
+                    <h4>تدريب تداول الأوراق المالية (البورصة)</h4>
+                    <p style="color: #999; font-size: 0.85rem;">الشركة الوطنية للسمسرة في الأوراق المالية (Watania)</p>
                 </div>
                 <div class="cert-date">2025</div>
             </div>
 
-            <div class="cert-item">
-                <div class="cert-info">
-                    <h4>تداول الأوراق المالية (البورصة)</h4>
-                    <p>الشركة الوطنية للسمسرة في الأوراق المالية (Watania)</p>
+            <div class="cert-row">
+                <div>
+                    <h4>أساسيات الموارد البشرية (How to be HR)</h4>
+                    <p style="color: #999; font-size: 0.85rem;">إتمام المسار التدريبي Round 72 للاحتراف الإداري</p>
                 </div>
                 <div class="cert-date">2025</div>
             </div>
 
-            <div class="cert-item">
-                <div class="cert-info">
-                    <h4>المحاسب البنكي المحترف</h4>
-                    <p>العمليات المصرفية والشمول المالي والاعتمادات</p>
+            <div class="cert-row">
+                <div>
+                    <h4>المحاسب البنكي (Banking Accountant)</h4>
+                    <p style="color: #999; font-size: 0.85rem;">العمليات المصرفية، الشمول المالي، والتحليل المحاسبي</p>
                 </div>
                 <div class="cert-date">2024</div>
             </div>
 
-            <div class="cert-item">
-                <div class="cert-info">
-                    <h4>حلول اختبارات الذكاء (IQ)</h4>
-                    <p>شهادة معتمدة من منصة معارف للتعليم الرقمي</p>
+            <div class="cert-row">
+                <div>
+                    <h4>حلول واختبارات الذكاء العالمية (IQ)</h4>
+                    <p style="color: #999; font-size: 0.85rem;">اعتماد منصة معارف للتعليم الرقمي</p>
                 </div>
                 <div class="cert-date">2024</div>
             </div>
 
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2>المهارات <span>الرئيسية</span></h2>
-        <div class="skills-container">
-            <span class="tag">MIS & Data Analysis</span>
-            <span class="tag">Web Development (HTML/CSS/JS)</span>
-            <span class="tag">Financial Planning</span>
-            <span class="tag">Python & SQLite</span>
-            <span class="tag">Pine Script</span>
-            <span class="tag">Warehouse Management</span>
-            <span class="tag">Video Editing (Adobe/CapCut)</span>
         </div>
     </section>
 
     <footer id="contact">
-        <h2>تواصل <span>مباشر</span></h2>
-        <p style="margin-bottom: 30px; color: #aaa;">الإسكندرية، مصر | متاح للتعاون البرمجي والاستشارات المالية</p>
-        <div class="social-links">
+        <h2 style="margin-bottom: 10px;">لنعمل <span>معاً</span></h2>
+        <p style="color: #777; margin-bottom: 40px;">متاح دائماً لمشاريع البرمجة، التحليل المالي، أو التعاون الإداري.</p>
+        
+        <div class="social-icons" style="margin-bottom: 40px;">
+            <a href="https://wa.me/201285577074" target="_blank"><i class="fab fa-whatsapp"></i></a>
             <a href="https://t.me/Boss_Trading_Signal" target="_blank"><i class="fab fa-telegram"></i></a>
             <a href="mailto:01285577074ay@gmail.com"><i class="fas fa-envelope"></i></a>
             <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
-        <p style="margin-top: 50px; font-size: 0.8rem; color: #444;">&copy; 2026 عبد الرحمن فوزي. جميع الحقوق محفوظة.</p>
+
+        <p style="font-size: 0.8rem; color: #333;">&copy; 2026 عبد الرحمن فوزي. صُمم بكل احترافية.</p>
     </footer>
 
 </body>
